@@ -1,7 +1,7 @@
 # Sorta-Flipper-Zero
 At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes.
 
-## Step 1 – Looking at the Flipper Zero Hardware
+## Step 1 - Looking at the Flipper Zero Hardware
 Before starting this project, I went through the Flipper Zero hardware documentation to understand how the device is built and what components it uses.
 
 From this, I created the table below listing the main hardware blocks used in the Flipper Zero.
@@ -9,9 +9,9 @@ This table is used as a reference to understand the system, not something to cop
 
 ### Flipper Zero – Hardware Component Overview
 
-<img width="586" height="305" alt="image" src="https://github.com/user-attachments/assets/a6ab0eeb-f2a1-43e6-aad4-e063b668a653" />
+<img width="882" height="459" alt="Screenshot 2025-12-19 at 7 44 55 pm" src="https://github.com/user-attachments/assets/54e41be2-6ee9-4988-9df5-421abc2aec96" />
 
-### Simplifying the Design (V1)
+### Simplifying the Design (v1)
 To keep the first version realistic and achievable, a few things were intentionally simplified.
 
 #### USB Power Only
@@ -29,3 +29,10 @@ A single antenna is used instead, which means reduced range, but much simpler ha
 #### Physical Reset Button
 Rather than copying the Flipper Zero’s reset button combination logic, this design uses a dedicated reset button.
 This keeps the schematic simpler and is more practical while debugging.
+
+## Step 2 - v1 Hardware Selection (Module Based)
+Based on the Flipper Zero reference design and the simplifications outlined above, the following components were chosen for the v1 module-based prototype.
+This list reflects what will actually be used in the first working version of the project.
+
+V1 - Selected Components:
+<img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
