@@ -35,4 +35,5 @@ Based on the Flipper Zero reference design and the simplifications outlined abov
 This list reflects what will actually be used in the first working version of the project.
 
 V1 - Selected Components:
+
 <img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
