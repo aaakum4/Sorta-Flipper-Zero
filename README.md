@@ -1,8 +1,14 @@
+![Flipper Image](https://github.com/user-attachments/assets/ed01836c-34e8-4d0d-b266-6dd59ebea9cc)
 # Sorta-Flipper-Zero
 At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes.
 
 ## Step 1 - Looking at the Flipper Zero Hardware
 Before starting this project, I went through the Flipper Zero hardware documentation to understand how the device is built and what components it uses.
+
+https://docs.flipper.net/zero/development/hardware/tech-specs
+https://docs.flipper.net/zero/development/hardware/schematic
+
+<img width="1248" height="680" alt="image" src="https://github.com/user-attachments/assets/dcb4107f-29a3-432d-8904-7ec437f3a7b1" />
 
 From this, I created the table below listing the main hardware blocks used in the Flipper Zero.
 This table is used as a reference to understand the system, not something to copy directly.
