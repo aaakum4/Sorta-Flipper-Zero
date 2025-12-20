@@ -43,3 +43,18 @@ This list reflects what will actually be used in the first working version of th
 V1 - Selected Components:
 
 <img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
+
+## Step 3 – Schematic Design
+With the overall architecture defined, I moved on to creating the full schematic in KiCad. The goal at this stage was to produce a complete, electrically correct design that could realistically be turned into a PCB, while still keeping the project modular and easy to iterate on.
+
+I started by placing the STM32WB5MMGH6TR module and wiring all required power pins according to ST’s reference designs. This included separating the digital and analog supplies, tying VREF+ to VDDA, and correctly handling VBAT and VDDUSB. Decoupling capacitors were added close to each supply pin to ensure stable operation.
+
+Next, the power system was designed around USB-C input. A main 3.3 V rail powers the MCU and core logic, while a second 3.3 V rail is used for external peripherals. 
+
+Peripheral interfaces were then added. Instead of hard-coding specific modules, generic headers were used for NFC, Sub-1 GHz RF, display, IR, vibration, and expansion. These headers are labeled to match common module pinouts, allowing different breakout boards to be tested without changing the core design. Shared buses like SPI were carefully routed with separate chip-select signals.
+
+Finally, the schematic was cleaned up and checked for electrical correctness. ERC warnings were addressed, unused pins were left intentionally for future use, and the design was reviewed to ensure it matched the original goals of being practical, modular, and suitable for a first hardware revision.
+
+<img width="1569" height="901" alt="Screenshot 2025-12-20 at 10 05 20 pm" src="https://github.com/user-attachments/assets/723d1095-1428-4652-acc0-0ada018f26e9" />
+
+This step, to be honest, was kinda cooked. I went in a bit over my head with this and it took wayyyy longer than I had hoped and probably needed.
