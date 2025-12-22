@@ -58,3 +58,17 @@ Finally, the schematic was cleaned up and checked for electrical correctness. ER
 <img width="1569" height="901" alt="Screenshot 2025-12-20 at 10 05 20 pm" src="https://github.com/user-attachments/assets/723d1095-1428-4652-acc0-0ada018f26e9" />
 
 This step, to be honest, was kinda cooked. I went in a bit over my head with this and it took wayyyy longer than I had hoped and probably needed.
+
+## Srep 4 - Schematic fixes and cleanup
+
+After the initial schematic was complete, I spent time going back through it to fix a number of electrical and structural issues flagged by ERC. This step was mainly about correcting mistakes rather than adding new features.
+
+Most of the changes were around power domains, making sure VDD, VDDA, VREF+, VBAT, and VDDUSB were connected correctly and matched the STM32WB module datasheet. I cleaned up grounding, added and adjusted local decoupling capacitors, and removed a few incorrect connections that were previously masking ERC errors instead of solving them properly.
+
+I also fixed the Bluetooth RF path, reworking the RF_OUT pin so it is routed through a DC-blocking capacitor to a u.FL connector. This replaces earlier incorrect handling of the RF pin and makes the onboard BLE functionality usable while keeping the design clean and standards-compliant.
+
+<img width="1410" height="809" alt="Screenshot 2025-12-22 at 11 09 07 pm" src="https://github.com/user-attachments/assets/d68cebd9-bc6c-4050-b0d2-89e7f463cfd1" />
+
+<img width="666" height="415" alt="Screenshot 2025-12-22 at 11 08 50 pm" src="https://github.com/user-attachments/assets/2785451a-f76c-4d7c-ae50-5598b944b082" />
+
+This is an amazing sight, no ERC errors 🙏🏻
