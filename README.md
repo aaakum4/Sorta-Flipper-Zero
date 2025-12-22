@@ -21,6 +21,7 @@ Not included (compared to a standard Flipper):
 - Integrated antennas
 - Fully enclosed, consumer-ready housing
 
+
 ## Step 1 - Looking at the Flipper Zero Hardware
 Before starting this project, I went through the Flipper Zero hardware documentation to understand how the device is built and what components it uses.
 
@@ -59,6 +60,7 @@ A single antenna is used instead, which means reduced range, but much simpler ha
 Rather than copying the Flipper Zero’s reset button combination logic, this design uses a dedicated reset button.
 This keeps the schematic simpler and is more practical while debugging.
 
+
 ## Step 2 - v1 Hardware Selection (Module Based)
 Based on the Flipper Zero reference design and the simplifications outlined above, the following components were chosen for the v1 module-based prototype.
 This list reflects what will actually be used in the first working version of the project.
@@ -68,6 +70,7 @@ V1 - Selected Components:
 <p align="center">
 <img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
 </p>
+
 
 ## Step 3 – Schematic Design
 With the overall architecture defined, I moved on to creating the full schematic in KiCad. The goal at this stage was to produce a complete, electrically correct design that could realistically be turned into a PCB, while still keeping the project modular and easy to iterate on.
@@ -85,6 +88,7 @@ Finally, the schematic was cleaned up and checked for electrical correctness. ER
 </p>
 
 This step, to be honest, was kinda cooked. I went in a bit over my head with this and it took wayyyy longer than I had hoped and probably needed.
+
 
 ## Srep 4 - Schematic fixes and cleanup
 
