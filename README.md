@@ -3,6 +3,24 @@
 # Sorta-Flipper-Zero
 At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work. The first iteration of this project will be modular based, then, once I've confirmed that it would in theory work, I will completely custom make it.
 
+Features: 
+- Bluetooth Low Energy (BLE)
+- Sub-GHz RF support (433 MHz)
+- NFC / RFID functionality
+- Infrared (IR) transmit and receive
+- On-device display
+- Physical navigation and action buttons
+- Audible feedback via buzzer
+- MicroSD card storage
+- USB-C connectivity
+- External antenna support
+
+Not included (compared to a standard Flipper): 
+- iButton / 1-Wire support - Capacitive touch input
+- Internal battery charging and management
+- Integrated antennas
+- Fully enclosed, consumer-ready housing
+
 ## Step 1 - Looking at the Flipper Zero Hardware
 Before starting this project, I went through the Flipper Zero hardware documentation to understand how the device is built and what components it uses.
 
