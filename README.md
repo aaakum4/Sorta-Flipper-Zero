@@ -107,3 +107,12 @@ I also fixed the Bluetooth RF path, reworking the RF_OUT pin so it is routed thr
 </p>
 
 This is an amazing sight, no ERC errors 🙏🏻
+
+
+## Step 5 - Sorting and routing the board
+
+Notes during the process:
+- RF Bluetooth, had to make a keepout zone
+- 4 layers
+- the double route line for usb d+ and usb d-
+- 0.5 trace width for PWR lines
