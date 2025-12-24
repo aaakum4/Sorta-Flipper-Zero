@@ -116,3 +116,5 @@ Notes during the process:
 - 4 layers
 - the double route line for usb d+ and usb d-
 - 0.5 trace width for PWR lines
+- Super tight board so i had to make some via's smaller and some routes smaller
+- Created silkscreen boxes for each module
