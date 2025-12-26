@@ -133,24 +133,38 @@ Routes:
 2) Power: Clearance = 0.2, Width = 0.5
 3) Smaller: Clearance = 0.2, Width = 0.15
 
+<p align="center">
 <img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/035ce808-6c41-4c7e-9e05-288f42e071db" />
+</p>
 
-Layer 1:
+#### Layer 1:
+<p align="center">
 <img width="2600" height="1466" alt="image" src="https://github.com/user-attachments/assets/a24988b5-cf17-4949-b92b-a8bd9ab0d61d" />
+</p>
 
-Layer 2: GND
+#### Layer 2: GND
+<p align="center">
 <img width="2596" height="1462" alt="image" src="https://github.com/user-attachments/assets/e4dba347-f015-4580-ac79-21e326f8adf7" />
+</p>
 
-Layer 3: +3V3
+#### Layer 3: +3V3
+<p align="center">
 <img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/4359205f-a80f-4790-9d6d-b17142a36dbe" />
+</p>
 
-Layer 4:
+#### Layer 4:
+<p align="center">
 <img width="2600" height="1468" alt="image" src="https://github.com/user-attachments/assets/5b34b2a4-9172-4abb-9c7e-0693838be588" />
+</p>
 
-3D:
+#### 3D:
+<p align="center">
 <img width="1790" height="1012" alt="image" src="https://github.com/user-attachments/assets/2b3c9ca5-742f-4cdd-9cc4-b688d8d68372" />
+</p>
 
+<p align="center">
 <img width="1764" height="980" alt="image" src="https://github.com/user-attachments/assets/3ac5b464-c784-4f7a-a1a0-a05d8c660e8c" />
+</p>
 
 Estimated Time:
 ~2 hours of planning & component placement
@@ -158,4 +172,7 @@ Estimated Time:
 ~2 to 3 hours of cleanup, checks, and second-guessing everything
 
 (Plus bonus time staring at the screen being stupid)
+
+## Step ??? - Spontaneous Micro Project
+
 
