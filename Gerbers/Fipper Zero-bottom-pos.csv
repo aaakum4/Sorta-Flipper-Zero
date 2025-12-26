@@ -1,0 +1,12 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"IR1","IR Transmitter","PinHeader_1x03_P2.54mm_Vertical",135.970000,-129.200000,-90.000000,bottom
+"IR2","IR Receiver","PinHeader_1x03_P2.54mm_Vertical",140.320000,-64.230000,90.000000,bottom
+"J1","CN5","PinHeader_1x10_P2.54mm_Vertical",173.970000,-76.905000,90.000000,bottom
+"J2","CN6","PinHeader_1x08_P2.54mm_Vertical",160.280000,-125.155000,-90.000000,bottom
+"J3","CN9","PinHeader_1x08_P2.54mm_Vertical",195.820000,-76.905000,90.000000,bottom
+"J4","CN8","PinHeader_1x06_P2.54mm_Vertical",183.120000,-125.165000,-90.000000,bottom
+"J9","Vibration module","PinHeader_1x03_P2.54mm_Vertical",233.590000,-127.530000,-90.000000,bottom
+"J10","Conn_01x05","PinHeader_1x05_P2.54mm_Vertical",129.600000,-101.690000,0.000000,bottom
+"J11","Conn_01x02","PinHeader_1x02_P2.54mm_Vertical",202.710000,-122.225000,180.000000,bottom
+"J12","Conn_01x03","PinHeader_1x03_P2.54mm_Vertical",218.930000,-90.930000,180.000000,bottom
+"J13","Conn_01x05","PinHeader_1x05_P2.54mm_Vertical",202.700000,-90.950000,180.000000,bottom
