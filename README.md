@@ -1,7 +1,9 @@
 ![Flipper Image](https://github.com/user-attachments/assets/ed01836c-34e8-4d0d-b266-6dd59ebea9cc)
 
 # Sorta-Flipper-Zero
-At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work. The first iteration of this project will be modular based, then, once I've confirmed that it would in theory work, I will completely custom make it.
+At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work.
+
+V1 is a modular based project to ensure that it will work as planned, then, , I will completely custom make it for V2. 
 
 Features: 
 - Bluetooth Low Energy (BLE)
@@ -175,4 +177,31 @@ Estimated Time:
 
 ## Step ??? - Spontaneous Micro Project
 
+For v2 of the Sorta Flipper Zero, I’ll most likely need to make a copper trace antenna for the NFC. For V1, I’m using a module, but I didn’t want to jump into V2 blindly. I decided to spend some time understanding how the module works, what I can bridge across, and even built my own small NFC card as an introduction to what I’ll need to do in V2.
+
+Here’s the datasheet for the NFC module I hope to use: ST X-NUCLEO-NFC08A1
+
+One thing I quickly noticed is that the antenna matters a lot. The orientation, size, and shape of the coil strongly affect the read range, and even small changes in trace layout or nearby copper can weaken the signal. This made it clear that designing a custom antenna will require careful attention.
+
+I also learned that matching the antenna to the module is critical. The module expects the antenna to have roughly the right inductance; otherwise, communication becomes unreliable. Experimenting with the card showed me how adding or removing a turn in the coil noticeably changes performance.
+
+Using the module is convenient because it handles much of the tuning internally. But seeing it in action made it obvious that if I want a custom copper trace for V2, I’ll need to account for these details myself.
+
+This is the PCB I made from a simple schematic. I originally included an LED, but removed it in the PCB for the sake of readability and clarity. The file is in its own folder.
+
+#### PCB:
+<p align="center">
+<img width="1038" height="1374" alt="image" src="https://github.com/user-attachments/assets/b18a631c-3055-4ea1-85f8-47ff28d642e9" />
+</p>
+
+#### 3D:
+<p align="center">
+<img width="816" height="1092" alt="image" src="https://github.com/user-attachments/assets/39d9e2fb-2350-4c02-84f4-f4e8903ca3ee" />
+</p>
+
+<p align="center">
+<img width="840" height="1094" alt="image" src="https://github.com/user-attachments/assets/09f3df60-b258-4401-aab7-110c7a275a12" />
+</p>
+
+This step is not nesacasru at all, but I truly found it really helpful with general understanding of this concept and I think it will be even more helpful when I make v2.
 
