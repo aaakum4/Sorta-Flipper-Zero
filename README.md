@@ -111,13 +111,51 @@ This is an amazing sight, no ERC errors 🙏🏻
 
 ## Step 5 - Sorting and routing the board
 
-Notes during the process:
-- RF Bluetooth, had to make a keepout zone
-- 4 layers
-- the double route line for usb d+ and usb d-
-- 0.5 trace width for PWR lines
-- Super tight board so i had to make some via's smaller and some routes smaller
-- Created silkscreen boxes for each module
+I am now a new man...
 
-![Uploading Screenshot 2025-12-26 at 5.51.39 pm.png…]()
+This was my third time routing a PCB, and it was a mix of improvement… and pain. The Xiao MCU I used for the Macropad and the ESP32-S3-WROOM-1u for the development board don’t come close to the challenge I just faced. The STM32WB5MMG is tiny but packed with pins, making it a real test of patience. That said, I’m finally done, and I couldn’t be happier.
+
+There were multiple reroutes along the way, mostly caused by pin congestion around the MCU and the sheer number of external connectors. Some compromises were necessary, like tighter clearances and smaller vias, but in the end, the board reached a fully routable and manufacturable state.
+
+While it’s not perfect, this routing pass made me really proud of how far I’ve come since the Macropad project. It was a clear reminder that schematics are the easy part—routing is where designs are truly made or broken.
+
+For this project, I worked with a 4-layer board (my first board over 2 layers) to manage density and RF performance, especially around the RF/Bluetooth section. I created a dedicated antenna keep-out zone to avoid copper interference, routed USB D+ and D− as a matched, parallel pair to maintain signal integrity, and widened power traces to 0.5 mm to reduce voltage drop.
+
+Given the tight board size, I had to selectively use smaller vias and reduced trace widths in congested areas to complete the routing without violating design rules. To make assembly easier, I also added silkscreen boxes around each functional module, improving clarity and helping with placement. Looking back, having dedicated GND and +3.3 V layers definitely made this step much more manageable compared to what it would’ve been without them.
+
+### The board
+Size: 125mm x 70mm (quite alot bulkier than a normal flipper, I have no clue how they do it)
+Vias:
+1) Defult: 0.6 x 0.3
+2) Smaller (Due to cramped space): 0.45 x 0.2
+Routes:
+1) Defult: Clearance = 0.2, Width = 0.2
+2) Power: Clearance = 0.2, Width = 0.5
+3) Smaller: Clearance = 0.2, Width = 0.15
+
+<img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/035ce808-6c41-4c7e-9e05-288f42e071db" />
+
+Layer 1:
+<img width="2600" height="1466" alt="image" src="https://github.com/user-attachments/assets/a24988b5-cf17-4949-b92b-a8bd9ab0d61d" />
+
+Layer 2: GND
+<img width="2596" height="1462" alt="image" src="https://github.com/user-attachments/assets/e4dba347-f015-4580-ac79-21e326f8adf7" />
+
+Layer 3: +3V3
+<img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/4359205f-a80f-4790-9d6d-b17142a36dbe" />
+
+Layer 4:
+<img width="2600" height="1468" alt="image" src="https://github.com/user-attachments/assets/5b34b2a4-9172-4abb-9c7e-0693838be588" />
+
+3D:
+<img width="1790" height="1012" alt="image" src="https://github.com/user-attachments/assets/2b3c9ca5-742f-4cdd-9cc4-b688d8d68372" />
+
+<img width="1764" height="980" alt="image" src="https://github.com/user-attachments/assets/3ac5b464-c784-4f7a-a1a0-a05d8c660e8c" />
+
+Estimated Time:
+~2 hours of planning & component placement
+~6 to 8 hours of routing + rerouting
+~2 to 3 hours of cleanup, checks, and second-guessing everything
+
+(Plus bonus time staring at the screen being stupid)
 
