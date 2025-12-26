@@ -1,7 +1,9 @@
 ![Flipper Image](https://github.com/user-attachments/assets/ed01836c-34e8-4d0d-b266-6dd59ebea9cc)
 
 # Sorta-Flipper-Zero
-At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work. The first iteration of this project will be modular based, then, once I've confirmed that it would in theory work, I will completely custom make it.
+At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work.
+
+V1 is a modular based project to ensure that it will work as planned, then, , I will completely custom make it for V2. 
 
 Features: 
 - Bluetooth Low Energy (BLE)
@@ -28,6 +30,7 @@ Before starting this project, I went through the Flipper Zero hardware documenta
 https://docs.flipper.net/zero/development/hardware/tech-specs
 https://docs.flipper.net/zero/development/hardware/schematic
 
+
 <p align="center">
 <img width="1248" height="680" alt="image" src="https://github.com/user-attachments/assets/dcb4107f-29a3-432d-8904-7ec437f3a7b1" />
 </p>
@@ -36,6 +39,7 @@ From this, I created the table below listing the main hardware blocks used in th
 This table is used as a reference to understand the system, not something to copy directly.
 
 ### Flipper Zero – Hardware Component Overview
+
 
 <p align="center">
 <img width="882" height="459" alt="Screenshot 2025-12-19 at 7 44 55 pm" src="https://github.com/user-attachments/assets/54e41be2-6ee9-4988-9df5-421abc2aec96" />
@@ -67,6 +71,7 @@ This list reflects what will actually be used in the first working version of th
 
 V1 - Selected Components:
 
+
 <p align="center">
 <img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
 </p>
@@ -82,6 +87,7 @@ Next, the power system was designed around USB-C input. A main 3.3 V rail powers
 Peripheral interfaces were then added. Instead of hard-coding specific modules, generic headers were used for NFC, Sub-1 GHz RF, display, IR, vibration, and expansion. These headers are labeled to match common module pinouts, allowing different breakout boards to be tested without changing the core design. Shared buses like SPI were carefully routed with separate chip-select signals.
 
 Finally, the schematic was cleaned up and checked for electrical correctness. ERC warnings were addressed, unused pins were left intentionally for future use, and the design was reviewed to ensure it matched the original goals of being practical, modular, and suitable for a first hardware revision.
+
 
 <p align="center">
 <img width="1569" height="901" alt="Screenshot 2025-12-20 at 10 05 20 pm" src="https://github.com/user-attachments/assets/723d1095-1428-4652-acc0-0ada018f26e9" />
@@ -102,8 +108,111 @@ I also fixed the Bluetooth RF path, reworking the RF_OUT pin so it is routed thr
 <img width="1410" height="809" alt="Screenshot 2025-12-22 at 11 09 07 pm" src="https://github.com/user-attachments/assets/d68cebd9-bc6c-4050-b0d2-89e7f463cfd1" />
 </p>
 
+
 <p align="center">
 <img width="666" height="415" alt="Screenshot 2025-12-22 at 11 08 50 pm" src="https://github.com/user-attachments/assets/2785451a-f76c-4d7c-ae50-5598b944b082" />
 </p>
 
 This is an amazing sight, no ERC errors 🙏🏻
+
+
+## Step 5 - Sorting and routing the board
+
+I am now a new man...
+
+This was my third time routing a PCB, and it was a mix of improvement… and pain. The Xiao MCU I used for the Macropad and the ESP32-S3-WROOM-1u for the development board don’t come close to the challenge I just faced. The STM32WB5MMG is tiny but packed with pins, making it a real test of patience. That said, I’m finally done, and I couldn’t be happier.
+
+There were multiple reroutes along the way, mostly caused by pin congestion around the MCU and the sheer number of external connectors. Some compromises were necessary, like tighter clearances and smaller vias, but in the end, the board reached a fully routable and manufacturable state.
+
+While it’s not perfect, this routing pass made me really proud of how far I’ve come since the Macropad project. It was a clear reminder that schematics are the easy part—routing is where designs are truly made or broken.
+
+For this project, I worked with a 4-layer board (my first board over 2 layers) to manage density and RF performance, especially around the RF/Bluetooth section. I created a dedicated antenna keep-out zone to avoid copper interference, routed USB D+ and D− as a matched, parallel pair to maintain signal integrity, and widened power traces to 0.5 mm to reduce voltage drop.
+
+Given the tight board size, I had to selectively use smaller vias and reduced trace widths in congested areas to complete the routing without violating design rules. To make assembly easier, I also added silkscreen boxes around each functional module, improving clarity and helping with placement. Looking back, having dedicated GND and +3.3 V layers definitely made this step much more manageable compared to what it would’ve been without them.
+
+### The board
+Size: 125mm x 70mm (quite alot bulkier than a normal flipper, I have no clue how they do it)
+Vias:
+1) Defult: 0.6 x 0.3
+2) Smaller (Due to cramped space): 0.45 x 0.2
+Routes:
+1) Defult: Clearance = 0.2, Width = 0.2
+2) Power: Clearance = 0.2, Width = 0.5
+3) Smaller: Clearance = 0.2, Width = 0.15
+
+<p align="center">
+<img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/035ce808-6c41-4c7e-9e05-288f42e071db" />
+</p>
+
+
+#### Layer 1:
+<p align="center">
+<img width="2600" height="1466" alt="image" src="https://github.com/user-attachments/assets/a24988b5-cf17-4949-b92b-a8bd9ab0d61d" />
+</p>
+
+
+#### Layer 2: GND
+<p align="center">
+<img width="2596" height="1462" alt="image" src="https://github.com/user-attachments/assets/e4dba347-f015-4580-ac79-21e326f8adf7" />
+</p>
+
+
+#### Layer 3: +3V3
+<p align="center">
+<img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/4359205f-a80f-4790-9d6d-b17142a36dbe" />
+</p>
+
+
+#### Layer 4:
+<p align="center">
+<img width="2600" height="1468" alt="image" src="https://github.com/user-attachments/assets/5b34b2a4-9172-4abb-9c7e-0693838be588" />
+</p>
+
+
+#### 3D:
+<p align="center">
+<img width="1790" height="1012" alt="image" src="https://github.com/user-attachments/assets/2b3c9ca5-742f-4cdd-9cc4-b688d8d68372" />
+</p>
+
+<p align="center">
+<img width="1764" height="980" alt="image" src="https://github.com/user-attachments/assets/3ac5b464-c784-4f7a-a1a0-a05d8c660e8c" />
+</p>
+
+Estimated Time:
+~2 hours of planning & component placement
+~6 to 8 hours of routing + rerouting
+~2 to 3 hours of cleanup, checks, and second-guessing everything
+
+(Plus bonus time staring at the screen being stupid)
+
+## Step ??? - Spontaneous Micro Project
+
+For v2 of the Sorta Flipper Zero, I’ll most likely need to make a copper trace antenna for the NFC. For V1, I’m using a module, but I didn’t want to jump into V2 blindly. I decided to spend some time understanding how the module works, what I can bridge across, and even built my own small NFC card as an introduction to what I’ll need to do in V2.
+
+Here’s the datasheet for the NFC module I hope to use: ST X-NUCLEO-NFC08A1
+
+One thing I quickly noticed is that the antenna matters a lot. The orientation, size, and shape of the coil strongly affect the read range, and even small changes in trace layout or nearby copper can weaken the signal. This made it clear that designing a custom antenna will require careful attention.
+
+I also learned that matching the antenna to the module is critical. The module expects the antenna to have roughly the right inductance; otherwise, communication becomes unreliable. Experimenting with the card showed me how adding or removing a turn in the coil noticeably changes performance.
+
+Using the module is convenient because it handles much of the tuning internally. But seeing it in action made it obvious that if I want a custom copper trace for V2, I’ll need to account for these details myself.
+
+This is the PCB I made from a simple schematic. I originally included an LED, but removed it in the PCB for the sake of readability and clarity. The file is in its own folder.
+
+#### PCB:
+<p align="center">
+<img width="1038" height="1374" alt="image" src="https://github.com/user-attachments/assets/b18a631c-3055-4ea1-85f8-47ff28d642e9" />
+</p>
+
+
+#### 3D:
+<p align="center">
+<img width="816" height="1092" alt="image" src="https://github.com/user-attachments/assets/39d9e2fb-2350-4c02-84f4-f4e8903ca3ee" />
+</p>
+
+<p align="center">
+<img width="840" height="1094" alt="image" src="https://github.com/user-attachments/assets/09f3df60-b258-4401-aab7-110c7a275a12" />
+</p>
+
+This step is not nesacasru at all, but I truly found it really helpful with general understanding of this concept and I think it will be even more helpful when I make v2.
+
