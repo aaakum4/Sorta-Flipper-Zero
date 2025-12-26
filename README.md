@@ -21,7 +21,7 @@ Not included (compared to a standard Flipper):
 - iButton / 1-Wire support - Capacitive touch input
 - Internal battery charging and management
 - Integrated antennas
-- Fully enclosed, consumer-ready housing
+- Fully enclosed, consumer-ready housing (I will make one for v2)
 
 
 ## Step 1 - Looking at the Flipper Zero Hardware
