@@ -30,6 +30,7 @@ Before starting this project, I went through the Flipper Zero hardware documenta
 https://docs.flipper.net/zero/development/hardware/tech-specs
 https://docs.flipper.net/zero/development/hardware/schematic
 
+
 <p align="center">
 <img width="1248" height="680" alt="image" src="https://github.com/user-attachments/assets/dcb4107f-29a3-432d-8904-7ec437f3a7b1" />
 </p>
@@ -38,6 +39,7 @@ From this, I created the table below listing the main hardware blocks used in th
 This table is used as a reference to understand the system, not something to copy directly.
 
 ### Flipper Zero – Hardware Component Overview
+
 
 <p align="center">
 <img width="882" height="459" alt="Screenshot 2025-12-19 at 7 44 55 pm" src="https://github.com/user-attachments/assets/54e41be2-6ee9-4988-9df5-421abc2aec96" />
@@ -69,6 +71,7 @@ This list reflects what will actually be used in the first working version of th
 
 V1 - Selected Components:
 
+
 <p align="center">
 <img width="732" height="303" alt="Screenshot 2025-12-19 at 8 00 04 pm" src="https://github.com/user-attachments/assets/b7dd60ea-bcbb-4b59-a580-b6a301e4e70c" />
 </p>
@@ -84,6 +87,7 @@ Next, the power system was designed around USB-C input. A main 3.3 V rail powers
 Peripheral interfaces were then added. Instead of hard-coding specific modules, generic headers were used for NFC, Sub-1 GHz RF, display, IR, vibration, and expansion. These headers are labeled to match common module pinouts, allowing different breakout boards to be tested without changing the core design. Shared buses like SPI were carefully routed with separate chip-select signals.
 
 Finally, the schematic was cleaned up and checked for electrical correctness. ERC warnings were addressed, unused pins were left intentionally for future use, and the design was reviewed to ensure it matched the original goals of being practical, modular, and suitable for a first hardware revision.
+
 
 <p align="center">
 <img width="1569" height="901" alt="Screenshot 2025-12-20 at 10 05 20 pm" src="https://github.com/user-attachments/assets/723d1095-1428-4652-acc0-0ada018f26e9" />
@@ -103,6 +107,7 @@ I also fixed the Bluetooth RF path, reworking the RF_OUT pin so it is routed thr
 <p align="center">
 <img width="1410" height="809" alt="Screenshot 2025-12-22 at 11 09 07 pm" src="https://github.com/user-attachments/assets/d68cebd9-bc6c-4050-b0d2-89e7f463cfd1" />
 </p>
+
 
 <p align="center">
 <img width="666" height="415" alt="Screenshot 2025-12-22 at 11 08 50 pm" src="https://github.com/user-attachments/assets/2785451a-f76c-4d7c-ae50-5598b944b082" />
@@ -139,25 +144,30 @@ Routes:
 <img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/035ce808-6c41-4c7e-9e05-288f42e071db" />
 </p>
 
+
 #### Layer 1:
 <p align="center">
 <img width="2600" height="1466" alt="image" src="https://github.com/user-attachments/assets/a24988b5-cf17-4949-b92b-a8bd9ab0d61d" />
 </p>
+
 
 #### Layer 2: GND
 <p align="center">
 <img width="2596" height="1462" alt="image" src="https://github.com/user-attachments/assets/e4dba347-f015-4580-ac79-21e326f8adf7" />
 </p>
 
+
 #### Layer 3: +3V3
 <p align="center">
 <img width="2598" height="1466" alt="image" src="https://github.com/user-attachments/assets/4359205f-a80f-4790-9d6d-b17142a36dbe" />
 </p>
 
+
 #### Layer 4:
 <p align="center">
 <img width="2600" height="1468" alt="image" src="https://github.com/user-attachments/assets/5b34b2a4-9172-4abb-9c7e-0693838be588" />
 </p>
+
 
 #### 3D:
 <p align="center">
@@ -193,6 +203,7 @@ This is the PCB I made from a simple schematic. I originally included an LED, bu
 <p align="center">
 <img width="1038" height="1374" alt="image" src="https://github.com/user-attachments/assets/b18a631c-3055-4ea1-85f8-47ff28d642e9" />
 </p>
+
 
 #### 3D:
 <p align="center">
