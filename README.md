@@ -1,6 +1,6 @@
 ![Flipper Image](https://github.com/user-attachments/assets/ed01836c-34e8-4d0d-b266-6dd59ebea9cc)
 
-# Sorta-Flipper-Zero
+# Sorta-Flipper-Zero by aaakum4 (Jake)
 At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work.
 
 V1 is a modular based project to ensure that it will work as planned, then, , I will completely custom make it for V2. 
