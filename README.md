@@ -236,7 +236,8 @@ This project uses the Flipper Zero firmware OTP generation script (scripts/otp.p
 
 ### Example:
 
-```cd flipperzero-firmware/scripts
+```
+cd flipperzero-firmware/scripts
 
 ./otp.py generate \
   --version $((0x0c)) \
