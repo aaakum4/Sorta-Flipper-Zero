@@ -265,7 +265,7 @@ Firmware installation is performed using qFlipper, the official Flipper Zero des
 This project may reference prebuilt firmware or OTP data derived from the Flipper Zero firmware repository. All such components remain licensed under GPL-3.0, and source code is provided in accordance with that license.
 
 
-## Problem solving
+## ⚠️ Problem solving
 
 The NFC chip used on the X‑NUCLEO expansion board is the ST25R3916B, which has a different IC identity value to the ST25R3916 used in the Flipper Zero. Although the two chips share the same register map and functionality, the firmware performs an identity check during initialisation, causing the driver to fail when the B variant is detected.
 
