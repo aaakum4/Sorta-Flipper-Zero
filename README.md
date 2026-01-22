@@ -216,6 +216,13 @@ This is the PCB I made from a simple schematic. I originally included an LED, bu
 
 This step is not nesassary at all, but I truly found it really helpful with general understanding of this concept and I think it will be even more helpful when I make v2.
 
+## Parts
+Since alot of this iteration will be using modules there isn't that much soldering. Here is the parts list from JLCPCB PCBA.
+
+<p align="center">
+<img width="1868" height="1678" alt="image" src="https://github.com/user-attachments/assets/0f2aeabc-48e1-4267-80d2-962dc84588ab" />
+</p>
+
 
 ## License
 
