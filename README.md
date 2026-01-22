@@ -214,14 +214,14 @@ This is the PCB I made from a simple schematic. I originally included an LED, bu
 <img width="840" height="1094" alt="image" src="https://github.com/user-attachments/assets/09f3df60-b258-4401-aab7-110c7a275a12" />
 </p>
 
+This step is not nesassary at all, but I truly found it really helpful with general understanding of this concept and I think it will be even more helpful when I make v2.
+
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
 
 This project includes and is derived from code from:
-- <flipperzero-firmware> by <skotopes>
+- flipperzero-firmware by skotopes (Top contributor)
   Licensed under GPL-3.0
-
-
-This step is not nesacasru at all, but I truly found it really helpful with general understanding of this concept and I think it will be even more helpful when I make v2.
 
