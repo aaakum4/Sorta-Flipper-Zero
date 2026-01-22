@@ -1,6 +1,7 @@
 ![Flipper Image](https://github.com/user-attachments/assets/ed01836c-34e8-4d0d-b266-6dd59ebea9cc)
 
 # Sorta-Flipper-Zero by aaakum4 (Jake)
+
 At the cost of a flipper zero, I thought that I may never own one. Then I found a hackster.io page that went through a full DIY and cheap Flipper Zero and I thought I'd try it myself with some changes. With this project, I should also learn a ton about PCB's and how electronics work.
 
 V1 is a modular based project to ensure that it will work as planned, then, , I will completely custom make it for V2. 
@@ -25,6 +26,7 @@ Not included (compared to a standard Flipper):
 
 
 ## Step 1 - Looking at the Flipper Zero Hardware
+
 Before starting this project, I went through the Flipper Zero hardware documentation to understand how the device is built and what components it uses.
 
 https://docs.flipper.net/zero/development/hardware/tech-specs
@@ -78,6 +80,7 @@ V1 - Selected Components:
 
 
 ## Step 3 – Schematic Design
+
 With the overall architecture defined, I moved on to creating the full schematic in KiCad. The goal at this stage was to produce a complete, electrically correct design that could realistically be turned into a PCB, while still keeping the project modular and easy to iterate on.
 
 I started by placing the STM32WB5MMGH6TR module and wiring all required power pins according to ST’s reference designs. This included separating the digital and analog supplies, tying VREF+ to VDDA, and correctly handling VBAT and VDDUSB. Decoupling capacitors were added close to each supply pin to ensure stable operation.
@@ -96,7 +99,7 @@ Finally, the schematic was cleaned up and checked for electrical correctness. ER
 This step, to be honest, was kinda cooked. I went in a bit over my head with this and it took wayyyy longer than I had hoped and probably needed.
 
 
-## Srep 4 - Schematic fixes and cleanup
+## Step 4 - Schematic fixes and cleanup
 
 After the initial schematic was complete, I spent time going back through it to fix a number of electrical and structural issues flagged by ERC. This step was mainly about correcting mistakes rather than adding new features.
 
@@ -131,6 +134,7 @@ For this project, I worked with a 4-layer board (my first board over 2 layers) t
 Given the tight board size, I had to selectively use smaller vias and reduced trace widths in congested areas to complete the routing without violating design rules. To make assembly easier, I also added silkscreen boxes around each functional module, improving clarity and helping with placement. Looking back, having dedicated GND and +3.3 V layers definitely made this step much more manageable compared to what it would’ve been without them.
 
 ### The board
+
 Size: 125mm x 70mm (quite alot bulkier than a normal flipper, I have no clue how they do it)
 Vias:
 1) Defult: 0.6 x 0.3
@@ -225,6 +229,7 @@ Since alot of this iteration will be using modules there isn't that much solderi
 
 
 ## Firmware
+
 Generating OTP Data (Flipper Zero)
 
 This project uses the Flipper Zero firmware OTP generation script (scripts/otp.py) derived from the official Flipper Zero firmware repository (licensed under GPL-3.0) to generate device-specific OTP data.
@@ -258,6 +263,17 @@ Firmware installation is performed using qFlipper, the official Flipper Zero des
 4. Follow on-screen flashing instructions
 
 This project may reference prebuilt firmware or OTP data derived from the Flipper Zero firmware repository. All such components remain licensed under GPL-3.0, and source code is provided in accordance with that license.
+
+
+## Problem solving
+
+The NFC chip used on the X‑NUCLEO expansion board is the ST25R3916B, which has a different IC identity value to the ST25R3916 used in the Flipper Zero. Although the two chips share the same register map and functionality, the firmware performs an identity check during initialisation, causing the driver to fail when the B variant is detected.
+
+To resolve this, I forked the official Flipper Zero firmware repository (https://github.com/flipperdevices/flipperzero-firmware) and modified the NFC driver to accept the ST25R3916B IC identity. This allows the existing firmware to operate correctly with the alternative NFC hardware without affecting functionality.
+
+The modified source code is available here:
+https://github.com/aaakum4/flipperzero-firmware.git
+
 
 ## License
 
