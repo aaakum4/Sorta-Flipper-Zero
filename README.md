@@ -255,6 +255,7 @@ Flashing incorrect data may permanently affect the device.
 
 ### Installing Firmware via qFlipper
 
+https://github.com/flipperdevices/qFlipper.git
 Firmware installation is performed using qFlipper, the official Flipper Zero desktop application.
 
 1. Install qFlipper from the official Flipper Zero website
